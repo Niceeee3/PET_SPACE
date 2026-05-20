@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ==========================================
+   ✨ แก้ปัญหาสีฟอนต์ในช่องกรอกจาง ✨
+========================================== */
+input, select, textarea {
+  color: #000000 !important; /* บังคับฟอนต์ที่พิมพ์ให้เป็น สีดำสนิท */
+  font-weight: 600 !important; /* ปรับให้ตัวหนาขึ้น จะได้อ่านง่าย */
+}
+
+input::placeholder, textarea::placeholder {
+  color: #6b7280 !important; /* ส่วน Placeholder (ข้อความตัวอย่าง) ให้เป็นสีเทาเข้ม */
+  font-weight: 400 !important; 
+}
